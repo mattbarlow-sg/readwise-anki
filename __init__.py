@@ -13,6 +13,18 @@ def create_card(title: str, url: str) -> None:
     noteTypeName = config.get("noteTypeName")
     readwiseArticleDeck = config.get("readwiseArticleDeck")
     model = mw.col.models.by_name(noteTypeName)
+    
+    if model is None:
+        model = mw.col.models.new(noteTypeName)
+        mw.col.models.addField(model, mw.col.models.newField("Front"))
+        mw.col.models.addField(model, mw.col.models.newField("Url"))
+        mw.col.models.addField(model, mw.col.models.newField("UrlHash"))
+        template = mw.col.models.newTemplate("Default")
+        template['qfmt'] = "<a href='{{Url}}'>{{Front}}</a>"
+        template['afmt'] = ""
+        mw.col.models.addTemplate(model, template)
+        mw.col.models.add(model)
+        mw.col.models.save(model)
 
     deck_id = mw.col.decks.id(readwiseArticleDeck)
 
