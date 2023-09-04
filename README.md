@@ -10,7 +10,7 @@ git clone https://github.com/mattbarlow-sg/readwise-anki.git
 - Windows: C:\Users\[Your Username]\AppData\Roaming\Anki2\addons21\
 - Mac: ~/Library/Application Support/Anki2/addons21/
 - Linux: ~/.local/share/Anki2/addons21/
-3. Copy Add-on: Copy the add-on folder (readwise-anki) to your Anki addons21 directory.
+3. Copy Add-on: Copy the add-on folder (readwise_anki) to your Anki addons21 directory.
 4. Restart Anki: Close and reopen Anki to complete the installation. The new features should now be available.
 5. Set your Readwise API Key: Click on Tools -> Add-ons. Double click the readwise-anki extension. Add your `readwiseApiKey`. Get your Readwise API token [here](https://readwise.io/access_token).
 
